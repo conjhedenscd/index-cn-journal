@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leisu · 主题内容产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f4f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 3rem 2.5rem 2.8rem;
+      margin-bottom: 2.4rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e2e8f0;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 span {
+      font-weight: 340;
+      color: #475569;
+    }
+    .hero .tagline {
+      font-size: 1.2rem;
+      font-weight: 380;
+      color: #334155;
+      border-left: 4px solid #94a3b8;
+      padding-left: 1.2rem;
+      margin: 1.2rem 0 1rem;
+      max-width: 680px;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #475569;
+      max-width: 640px;
+      margin-bottom: 0.3rem;
+    }
+
+    /* 分区卡片网格 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin: 2rem 0 1.8rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 2rem;
+      border: 1px solid #e6edf5;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 490;
+      margin-bottom: 0.9rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card h2 small {
+      font-size: 0.75rem;
+      font-weight: 380;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card li {
+      padding: 0.35rem 0 0.35rem 1.3rem;
+      position: relative;
+    }
+    .card li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+    }
+
+    /* 使用建议 + 提示组合 */
+    .section-combo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .hint-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.5rem 1.8rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .hint-card h3 {
+      font-size: 1.05rem;
+      font-weight: 490;
+      color: #1e293b;
+      margin-bottom: 0.7rem;
+    }
+    .hint-card p, .hint-card li {
+      font-size: 0.92rem;
+      color: #3f4a5c;
+    }
+    .hint-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .hint-card li {
+      padding: 0.2rem 0 0.2rem 0.9rem;
+      position: relative;
+    }
+    .hint-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 2rem 1.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .faq-mini h3 {
+      font-size: 1.1rem;
+      font-weight: 480;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+    }
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item strong {
+      font-weight: 500;
+      color: #1e293b;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #475569;
+      margin: 0;
+    }
+
+    /* 链接嵌入 */
+    .inline-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .inline-link:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* 底部 */
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7a8f;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 780px) {
+      .grid-2, .section-combo {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero .tagline {
+        font-size: 1rem;
+      }
+      .card, .hint-card, .faq-mini {
+        padding: 1.3rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>主题内容 · <span>leisu</span></h1>
+    <div class="tagline">围绕关键词的系统化信息产品 · 结构化摘要 · 使用场景 · 可信指引</div>
+    <p>一个以 <a href="https://asia-main-leisu.com" class="inline-link">leisu</a> 为核心主题的内容产品，面向希望系统了解该方向信息架构的使用者。提供经过梳理的要点、典型应用建议以及克制的访问说明，不包装夸张主张，仅呈现可被验证的基础内容。</p>
+  </div>
+
+  <!-- 主卡片：摘要 + 亮点 -->
+  <div class="grid-2">
+    <div class="card">
+      <h2>内容摘要 <small>core</small></h2>
+      <p>产品围绕「leisu」这一关键词构建，聚合了多来源的基础信息、逻辑归类与简要注释，帮助使用者快速建立对主题的整体认知。内容选材以公开可参考的资料为边界，不堆砌未经核实的断言。</p>
+      <ul>
+        <li>覆盖主题概念、常用分类与关联维度</li>
+        <li>以简洁条目呈现，减少冗余叙述</li>
+        <li>定期校验基础事实与引用一致性</li>
+        <li>不引导超出信息边界的推断</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>产品亮点 <small>features</small></h2>
+      <ul>
+        <li><strong>结构化索引</strong> —— 将主题拆解为可独立查阅的模块，降低信息过载</li>
+        <li><strong>场景适配</strong> —— 提供不同使用目的下的内容侧重与阅读建议</li>
+        <li><strong>克制的表述</strong> —— 避免模糊和过度承诺，只呈现有依据的内容</li>
+        <li><strong>持续维护</strong> —— 基于反馈与主题发展，保持内容有效性</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 使用建议 + 访问说明 -->
+  <div class="section-combo">
+    <div class="hint-card">
+      <h3>使用建议</h3>
+      <ul>
+        <li>快速了解主题全貌：先浏览摘要与亮点模块</li>
+        <li>查找具体信息：利用页面内结构化分类定位</li>
+        <li>交叉验证：结合其他可靠来源对照参考</li>
+        <li>适合对「leisu」方向有初步兴趣或基础调研需求的使用者</li>
+      </ul>
+    </div>
+    <div class="hint-card">
+      <h3>可信 · 克制说明</h3>
+      <p>页面内容以公开可获取的信息为基础，不包含未声明的主张。所有链接指向 <a href="https://asia-main-leisu.com" class="inline-link">leisu</a> 主站，该站点为内容承载主体。建议使用者在引用或二次传播前自行核实关键信息。本页面不收集个人数据，不嵌入追踪脚本。</p>
+      <p style="margin-top: 0.5rem;">若对特定条目的来源有疑问，可通过主站联系方式提出。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h3>常见疑问 · 摘要</h3>
+    <div class="faq-item">
+      <strong>这个页面是官方产品吗？</strong>
+      <p>本页面是独立制作的介绍页，指向 <a href="https://asia-main-leisu.com" class="inline-link">leisu</a> 主站，内容以产品说明为目的，不代表官方唯一表述。</p>
+    </div>
+    <div class="faq-item">
+      <strong>内容会频繁更新吗？</strong>
+      <p>会基于主题信息的变化进行适度更新，但不保证实时同步。建议定期访问主站获取最新内容。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否可以转载或引用？</strong>
+      <p>对于摘要类内容，可在注明出处的前提下进行简短引用。不建议大篇幅复制，以免脱离上下文导致误解。</p>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    产品说明页 · 主题聚焦 <a href="https://asia-main-leisu.com" class="inline-link">leisu</a> · 简洁 · 可信 · 克制的信息呈现
+  </div>
+</div>
+</body>
+</html>
